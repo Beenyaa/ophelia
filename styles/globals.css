@@ -7,6 +7,7 @@
 }
 
 body {
+  -webkit-overflow-scrolling: auto;
   background-color: #111;
 }
 
