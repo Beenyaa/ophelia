@@ -19,7 +19,7 @@ const InputMessage = ({ input, setInput, sendMessage }: any) => (
       type="text"
       aria-label="chat input"
       required
-      className="min-w-0 flex-auto appearance-none rounded-md border border-pink-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-pink-800/5 placeholder:text-pink-400 focus:border-rose-500 focus:outline-none focus:ring-4 focus:ring-rose-500/10 sm:text-sm"
+      className="min-w-0 flex-auto appearance-none rounded-md border border-pink-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-pink-800/5 placeholder:text-black text-black focus:border-rose-500 focus:outline-none focus:ring-4 focus:ring-rose-500/10 sm:text-sm"
       value={input}
       onKeyDown={(e) => {
         if (e.key === "Enter") {
@@ -125,7 +125,7 @@ export function Chat() {
   }, [messages]);
 
   return (
-    <div className="rounded-2xl border-zinc-100 border p-6 h-full flex flex-col justify-end">
+    <div className=" bg-pink-50 border-pink-50 border p-6 h-full flex flex-col justify-end">
       <div className="overflow-y-auto" ref={scrollContainerRef}>
         {messages.map(({ content, role }, index) => (
           <ChatLine

@@ -6,16 +6,21 @@
   bottom: 0;
 }
 
+body {
+  background-color: #111;
+}
+
 h2 {
   font-family: "Shrikhand", cursive;
 }
 
 p span {
   font-family: "Tsukimi Rounded", sans-serif;
+  color: #111;
 }
 
 .hero {
-  color: black;
+  color: white;
   /* Bright things in dark environments usually cast that light, giving off a glow */
   filter: drop-shadow(0 1px 3px);
   animation: glitch 1s linear infinite;
@@ -80,4 +85,15 @@ p span {
   62% {
     transform: translate(-22px, 5px) skew(21deg);
   }
+}
+
+/* Style the video: 100% width and height to cover the entire window */
+.background-image {
+  z-index: -1;
+  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
