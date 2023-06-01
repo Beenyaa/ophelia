@@ -1,6 +1,5 @@
 import { type ChatGPTMessage } from "../../components/ChatLine";
-import { OpenAIRequest } from "../../utils/OpenAIRequest";
-import { OpenAIStream } from "../../utils/OpenAIStream";
+import { OpenAIChatStream } from "../../utils/OpenAIChatStream";
 import { OpenAIChatPayload } from "../../utils/types";
 
 // break the app if the API key is missing
@@ -45,12 +44,7 @@ const handler = async (req: Request): Promise<Response> => {
     user: body?.user,
     n: 1,
   };
-  if (payload.stream) {
-    const stream = await OpenAIStream(payload);
-    return new Response(stream);
-  } else {
-    const request = await OpenAIRequest(payload);
-    return new Response(request);
-  }
+  const stream = await OpenAIChatStream(payload);
+  return new Response(stream);
 };
 export default handler;
