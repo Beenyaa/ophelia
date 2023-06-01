@@ -1,6 +1,6 @@
-import { OpenAIChatPayload } from "./types";
+import { OpenAIImagePayload } from "./types";
 
-export async function OpenAIRequest(payload: OpenAIChatPayload) {
+export async function OpenAIImageRequest(payload: OpenAIImagePayload) {
   const requestHeaders: Record<string, string> = {
     "Content-Type": "application/json",
     Authorization: `Bearer ${process.env.OPENAI_API_KEY ?? ""}`,
@@ -10,7 +10,7 @@ export async function OpenAIRequest(payload: OpenAIChatPayload) {
     requestHeaders["OpenAI-Organization"] = process.env.OPENAI_API_ORG;
   }
 
-  const res = await fetch("https://api.openai.com/v1/chat/completions", {
+  const res = await fetch("https://api.openai.com/v1/images/generations", {
     headers: requestHeaders,
     method: "POST",
     body: JSON.stringify(payload),
@@ -23,8 +23,8 @@ export async function OpenAIRequest(payload: OpenAIChatPayload) {
   // Parse response as JSON
   const json = await res.json();
 
-  // Extract the 'text' value
-  const text = json.choices[0].delta?.content || "";
+  // Extract the image json
+  const image = json.data[0].url;
 
-  return text;
+  return image;
 }

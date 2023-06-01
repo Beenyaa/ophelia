@@ -18,3 +18,11 @@ export interface OpenAIChatPayload {
   user?: string;
   n: number;
 }
+
+export interface OpenAIImagePayload {
+  prompt: string;
+  n?: number;
+  size?: string;
+  response_format?: string;
+  user?: string;
+}
