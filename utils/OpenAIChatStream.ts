@@ -5,7 +5,7 @@ import {
 } from "eventsource-parser";
 import { OpenAIChatPayload } from "./types";
 
-export async function OpenAIStream(
+export async function OpenAIChatStream(
   payload: OpenAIChatPayload,
   thoughts?: boolean
 ) {
