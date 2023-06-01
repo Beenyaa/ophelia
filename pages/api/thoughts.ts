@@ -1,6 +1,5 @@
 import { type ChatGPTMessage } from "../../components/ChatLine";
-import { OpenAIRequest } from "../../utils/OpenAIRequest";
-import { OpenAIStream } from "../../utils/OpenAIStream";
+import { OpenAIChatStream } from "../../utils/OpenAIChatStream";
 import { OpenAIChatPayload } from "../../utils/types";
 
 // break the app if the API key is missing
@@ -18,7 +17,8 @@ const handler = async (req: Request): Promise<Response> => {
   const messages: ChatGPTMessage[] = [
     {
       role: "system",
-      content: `You are Ophelia from Shakespeare's Hamlet. Respond to messages with the thoughts that go through Ophelia's mind.
+      content: `You are Ophelia from Shakespeare's Hamlet. Respond to messages with what might be the thoughts that are going through Ophelia's mind while reading the other person's messages.
+      Make sure the thoughts are short.
       You are communicating through a chat portal. Ophelia is scared, lonely and trapped.
       She is unable to understand her own identity. Answers should be erratic and strange.
       They should represent Ophelia during her madness in Hamlet. They should be angry. 
@@ -44,12 +44,7 @@ const handler = async (req: Request): Promise<Response> => {
     user: body?.user,
     n: 1,
   };
-  if (payload.stream) {
-    const stream = await OpenAIStream(payload, true);
-    return new Response(stream);
-  } else {
-    const request = await OpenAIRequest(payload);
-    return new Response(request);
-  }
+  const stream = await OpenAIChatStream(payload, true);
+  return new Response(stream);
 };
 export default handler;
