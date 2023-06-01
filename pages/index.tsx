@@ -15,13 +15,13 @@ function Home() {
       />
       <Page className="flex flex-col h-screen relative ">
         <section className="flex flex-col justify-center items-center grow py-3">
-          <h2
+          {/* <h2
             className="text-3xl md:text-4xl hero pb-3"
             data-text="Ophelia's Chatroom"
           >
             Ophelia&apos;s Chatroom
-          </h2>
-          <div className="lg:w-3/4 w-5/6 pt-3 pb-6 grow-0 window h-[90vh]">
+          </h2> */}
+          <div className="lg:w-3/4 w-5/6 pb-6 grow-0 window h-[90vh]">
             <div className="title-bar">
               <div className="title-bar-text">Ophelia&apos;s Chatroom</div>
               <div className="title-bar-controls">
