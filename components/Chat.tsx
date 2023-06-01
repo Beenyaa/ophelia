@@ -14,12 +14,12 @@ export const initialMessages: ChatGPTMessage[] = [
 ];
 
 const InputMessage = ({ input, setInput, sendMessage }: any) => (
-  <div className="mt-6 flex clear-both">
+  <div className="mt-1  flex clear-both">
     <input
       type="text"
       aria-label="chat input"
       required
-      className="min-w-0 flex-auto appearance-none rounded-md border border-pink-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-pink-800/5 placeholder:text-black text-black focus:border-rose-500 focus:outline-none focus:ring-4 focus:ring-rose-500/10 sm:text-sm"
+      className="text-base min-w-0 flex-auto appearance-none rounded-md border border-pink-900/10 bg-white py-[calc(theme(spacing.2)-1px)] shadow-md shadow-pink-800/5 placeholder:text-black text-black focus:border-rose-500 focus:outline-none focus:ring-4 focus:ring-rose-500/10"
       value={input}
       onKeyDown={(e) => {
         if (e.key === "Enter") {
