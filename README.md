@@ -2,6 +2,8 @@
 
 This applications implements a simple chat bot mimicking Ophelia's personality using Next.js, API Routes, and [OpenAI ChatGPT API](https://beta.openai.com/docs/api-reference/completions/create).
 
+This project was bespokely created for an art exhibition in collaboration with the artist themselves.
+
 ### Components
 
 - Next.js
